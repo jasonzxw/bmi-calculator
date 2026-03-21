@@ -91,6 +91,36 @@ const en = {
       "This tool is for reference only and does not replace professional medical advice. Please consult a doctor for health concerns.",
   },
   lang: "Language",
+  faq: {
+    title: "Frequently Asked Questions",
+    subtitle: "Science-based answers about BMI and calorie calculation",
+    items: [
+      {
+        q: "What is a healthy BMI range?",
+        a: "For most adults, a BMI between 18.5 and 24.9 is considered normal. Below 18.5 is underweight, 25–29.9 is overweight, and 30 or above is obese. Keep in mind BMI is a population-level statistical tool and doesn't account for muscle mass or body composition.",
+      },
+      {
+        q: "What is the difference between BMR and TDEE?",
+        a: "BMR (Basal Metabolic Rate) is the minimum number of calories your body needs to sustain basic functions while completely at rest — essentially if you stayed in bed all day. TDEE (Total Daily Energy Expenditure) adds your physical activity on top of BMR, giving you the total calories burned in a typical day. TDEE is the key number for planning your diet.",
+      },
+      {
+        q: "How many calories should I cut to lose weight?",
+        a: "A daily deficit of 300–500 kcal is generally recommended. Since 1 kg of fat contains roughly 7,700 kcal, a 500 kcal daily deficit can lead to about 0.45 kg of weight loss per week. Avoid deficits larger than 1,000 kcal/day as this can cause muscle loss and metabolic slowdown.",
+      },
+      {
+        q: "My BMI is normal but I have belly fat — is that okay?",
+        a: "This is known as \"normal-weight obesity\" or TOFI (Thin Outside, Fat Inside). BMI can't distinguish fat from muscle, so abdominal (visceral) fat can be high even at a normal BMI. Excess visceral fat is linked to increased cardiovascular risk. Consider tracking waist circumference and body fat percentage for a fuller picture.",
+      },
+      {
+        q: "How much protein do I need to build muscle?",
+        a: "For muscle gain, aim for 1.6–2.2 g of protein per kg of body weight per day. For a 70 kg person, that's roughly 112–154 g of protein daily. Good sources include chicken breast, eggs, beef, tofu, and Greek yogurt. Sufficient protein intake is essential — even with hard training, muscle growth is limited without enough protein.",
+      },
+      {
+        q: "Why does my actual weight change differ from the calculated prediction?",
+        a: "TDEE formulas are based on population averages, and individual metabolic rates can vary by ±15%. Food labels also carry inherent calorie measurement errors. The best approach is to follow the calculated targets for 2–3 weeks, then adjust your intake based on actual weight changes rather than making large adjustments upfront.",
+      },
+    ],
+  },
 };
 
 export default en;
