@@ -5,6 +5,7 @@ import { useI18n } from "@/locales";
 import CalculatorForm from "./CalculatorForm";
 import ResultCard from "./ResultCard";
 import { calculate } from "@/lib/calc";
+import { trackEvent } from "@/lib/analytics";
 import type { FormData, CalcResult, Goal } from "@/types";
 
 export default function Calculator() {
@@ -20,6 +21,15 @@ export default function Calculator() {
       setResult(res);
       setLastGoal(data.goal);
       setIsAnimating(false);
+      trackEvent("calculate", {
+        gender: data.gender,
+        age: data.age,
+        bmi: res.bmi,
+        bmi_category: res.bmiCategory,
+        goal: data.goal,
+        activity_level: data.activityLevel,
+        unit_system: data.unitSystem,
+      });
       setTimeout(() => {
         document.getElementById("result-section")?.scrollIntoView({
           behavior: "smooth",
@@ -30,8 +40,14 @@ export default function Calculator() {
   };
 
   const handleReset = () => {
+    trackEvent("reset", {});
     setResult(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleLocaleChange = (l: "zh" | "en") => {
+    setLocale(l);
+    trackEvent("language_switch", { locale: l });
   };
 
   return (
@@ -53,7 +69,7 @@ export default function Calculator() {
           {/* Language Toggle */}
           <div className="flex rounded-xl overflow-hidden border border-gray-200">
             <button
-              onClick={() => setLocale("zh")}
+              onClick={() => handleLocaleChange("zh")}
               className={`px-3 py-1.5 text-sm font-medium transition-all ${
                 locale === "zh"
                   ? "bg-green-500 text-white"
@@ -63,7 +79,7 @@ export default function Calculator() {
               中文
             </button>
             <button
-              onClick={() => setLocale("en")}
+              onClick={() => handleLocaleChange("en")}
               className={`px-3 py-1.5 text-sm font-medium transition-all ${
                 locale === "en"
                   ? "bg-green-500 text-white"

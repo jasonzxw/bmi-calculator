@@ -2,6 +2,7 @@
 
 import { useRef, useCallback } from "react";
 import { useI18n } from "@/locales";
+import { trackEvent } from "@/lib/analytics";
 import type { CalcResult, Goal } from "@/types";
 
 interface ResultCardProps {
@@ -86,6 +87,7 @@ export default function ResultCard({ result, goal, onReset }: ResultCardProps) {
       link.download = "bmi-result.png";
       link.href = dataUrl;
       link.click();
+      trackEvent("save_image", { bmi_category: result.bmiCategory });
     } catch (err) {
       console.error("Failed to save image", err);
     }
