@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   authors: [{ name: "BMI Calculator" }],
   robots: "index, follow",
   verification: {
-    google: "hI8ksHx0f_Xxe9f7Yg1CEisPE8Dk0YAw6H1sLbIuv14",
+    google: "zQlrw93Q3tzUT5zQkjOa83tTTbsinSmDF2LpTn7z1rA",
   },
   openGraph: {
     title: "BMI计算器 - 免费在线体质指数与卡路里计算",
