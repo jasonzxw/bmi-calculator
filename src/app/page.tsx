@@ -1,5 +1,6 @@
 import Calculator from "@/components/Calculator";
 import FAQ from "@/components/FAQ";
+import FeedbackForm from "@/components/FeedbackForm";
 import zh from "@/locales/zh";
 
 const faqJsonLd = {
@@ -50,6 +51,7 @@ export default function Home() {
       />
       <Calculator />
       <FAQ />
+      <FeedbackForm />
     </>
   );
 }
