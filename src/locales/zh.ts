@@ -105,6 +105,7 @@ const zh = {
     errors: {
       messageRequired: "请填写你的意见",
       messageTooShort: "意见内容至少 10 个字",
+      messageTooLong: "意见内容不能超过 2000 个字",
       emailInvalid: "邮箱格式不正确",
     },
   },

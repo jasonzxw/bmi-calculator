@@ -20,6 +20,8 @@ export default function FeedbackForm() {
       errs.message = f.errors.messageRequired;
     } else if (message.trim().length < 10) {
       errs.message = f.errors.messageTooShort;
+    } else if (message.trim().length > 2000) {
+      errs.message = f.errors.messageTooLong;
     }
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       errs.email = f.errors.emailInvalid;
@@ -110,6 +112,7 @@ export default function FeedbackForm() {
               onChange={(e) => setMessage(e.target.value)}
               placeholder={f.messagePlaceholder}
               rows={4}
+              maxLength={2000}
               className={`w-full px-4 py-3 rounded-2xl border-2 bg-white text-gray-800 text-sm focus:outline-none transition-colors placeholder:text-gray-300 resize-none ${
                 errors.message
                   ? "border-red-300 focus:border-red-400"
@@ -122,7 +125,9 @@ export default function FeedbackForm() {
               ) : (
                 <span />
               )}
-              <span className="text-xs text-gray-300">{message.length}</span>
+              <span className={`text-xs ${message.length > 1800 ? "text-orange-400" : "text-gray-300"}`}>
+                {message.length} / 2000
+              </span>
             </div>
           </div>
 

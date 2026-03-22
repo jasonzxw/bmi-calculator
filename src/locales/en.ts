@@ -106,6 +106,7 @@ const en = {
     errors: {
       messageRequired: "Please enter your feedback",
       messageTooShort: "Feedback must be at least 10 characters",
+      messageTooLong: "Feedback must be no more than 2000 characters",
       emailInvalid: "Please enter a valid email address",
     },
   },
